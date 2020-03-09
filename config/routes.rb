@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :students, only: [:create, :show, :new, :edit, :update]
+  patch 'students/:d', to: 'students#update'
+  
+  resources :school_classes, only: [:create, :show, :new, :edit, :update]
+  patch 'school_classes/:id', to: 'school_classes#update'
 end
